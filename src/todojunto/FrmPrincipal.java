@@ -328,27 +328,8 @@ public class FrmPrincipal extends javax.swing.JFrame {
     }
       // <editor-fold defaultstate="collapsed" desc="Conexión">  
 
-          private void ejecutar_consulta(String sql) {
 
-        try {
 
-            Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-            rs = stmt.executeQuery(sql);
-
-        } catch (SQLException ex) {
-        }
-    }
-        public int Ejecutar_Sql_Actualizacion(String sql) {
-        int i;
-        try {
-            Statement stmt = conn.createStatement();
-            JOptionPane.showMessageDialog(null, sql);
-             i = stmt.executeUpdate(sql);
-        } catch (SQLException ex) {
-            i = 0;
-        }
-        return i;
-    }
     
         // </editor-fold>     
         
