@@ -28,8 +28,15 @@ public class FrmPrincipal extends javax.swing.JFrame {
     public FrmPrincipal() {
         initComponents();
         this.setLocationRelativeTo(null);
-        ClaseDatos();
-        ejecutar_consulta("select * from alumnos");
+        //todo la clase datos es la clase que conecta con la base de datos y deberia inicializarla un controlador cuando fuera necesario
+        //realizar la conexion
+//        ClaseDatos();
+
+        //TODO las consultas SQL deberian estar en variables y no hardcodeadas aqui
+//        ejecutar_consulta("select * from alumnos");
+
+        //la vista tabla se crea con el resulset generado de hacer una consulta a la base de datos
+        //en este caso la tabla estara vacia al iniciar el programa por que se ha inicializado a null
         vtabla=new VistaTabla(rs);
         TablaAlumnos.setModel(vtabla);
         
