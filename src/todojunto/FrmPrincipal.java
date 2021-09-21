@@ -253,7 +253,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private void TablaAlumnosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TablaAlumnosMouseClicked
         Mostrar_datos(TablaAlumnos.getSelectedRow());
     }//GEN-LAST:event_TablaAlumnosMouseClicked
- private void Mostrar_datos(int fila) {
+    private void Mostrar_datos(int fila) {
 
         txtDni.setText(String.valueOf(TablaAlumnos.getValueAt(fila, 1)));
         txtRegistro.setText(String.valueOf(TablaAlumnos.getValueAt(fila, 0)));
