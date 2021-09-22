@@ -36,9 +36,9 @@ encontras lo siguiente
 # ATENCION
 todo lo realizado en este repositorio esta realizado por un alumno-curioso y seguramente tutelado por un profesor igual de curioso.
 
-##puedes usar este repositorio como te plazca pero recuerda que es para fines formativos
+## puedes usar este repositorio como te plazca pero recuerda que es para fines formativos
 
-#LIST OF TODOS
+# LIST OF TODOS
 
 - [ ] Crear arquitectura del proyecto
 - [ ] disccionar por completo el codigo original
