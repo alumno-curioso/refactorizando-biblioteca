@@ -2,11 +2,42 @@ package view;
 
 import javax.swing.*;
 
-public class MainView {
+public class MainView extends JFrame {
     private JPanel jpMainView;
     private JLabel lbMainView;
     private JButton jbStudent;
     private JButton jbArchive;
     private JButton jbUsers;
     private JButton jbExit;
+
+
+    public MainView(){
+
+        setTitle("Menu biblioteca");
+        setSize(600,600);
+        setLocationRelativeTo(null);
+
+        add(jpMainView);
+
+
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
+
+    public JButton getJbStudent() {
+        return jbStudent;
+    }
+
+    public JButton getJbArchive() {
+        return jbArchive;
+    }
+
+    public JButton getJbUsers() {
+        return jbUsers;
+    }
+
+    public JButton getJbExit() {
+        return jbExit;
+    }
 }
+
+

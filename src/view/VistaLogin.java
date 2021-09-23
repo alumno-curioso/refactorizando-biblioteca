@@ -49,7 +49,5 @@ public class VistaLogin extends JFrame {
         return btValidate;
     }
 
-    public void setText(String mensaje){
-        this.tfUser.setText(mensaje);
-    }
+
 }
