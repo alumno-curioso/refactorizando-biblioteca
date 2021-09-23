@@ -1,12 +1,12 @@
 package app;
 
 import controller.Controller;
-import view.VistaPrincipal;
+import view.VistaLogin;
 
 public class App {
     public static void main(String[] args) {
 //        new Conexion();
-        Controller controller = new Controller(new VistaPrincipal());
+        Controller controller = new Controller(new VistaLogin());
 
     }
 }

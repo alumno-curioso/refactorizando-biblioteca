@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class VistaPrincipal extends JFrame {
+public class VistaLogin extends JFrame {
     private JPanel panel1;
     private JLabel lbSesionInit;
     private JTextField tfUser;
@@ -15,7 +15,7 @@ public class VistaPrincipal extends JFrame {
     private JButton btValidate;
 
 
-    public VistaPrincipal() {
+    public VistaLogin() {
         setTitle("Login usuario");
         setSize(400,400);
         setLocationRelativeTo(null);

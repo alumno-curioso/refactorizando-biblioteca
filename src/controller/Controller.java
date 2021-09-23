@@ -3,24 +3,20 @@ package controller;
 
 import static server.querys.ValidateUser.validateUser;
 
-import view.VistaPrincipal;
-
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import view.VistaLogin;
 
 public class Controller {
 
-    private VistaPrincipal vistaPrincipal;
+    private VistaLogin vistaLogin;
 
 
-    public Controller(VistaPrincipal vistaPrincipal){
-        this.vistaPrincipal = vistaPrincipal;
+    public Controller(VistaLogin vistaLogin){
+        this.vistaLogin = vistaLogin;
 
-        this.vistaPrincipal.getBtValidate().addActionListener(e -> {
-            String user = this.vistaPrincipal.getTfUser();
-            String password = this.vistaPrincipal.getTfPass();
-            System.out.println(user+password);
-            //todo crear metodo que compruebe si es un usuario valido
+        this.vistaLogin.getBtValidate().addActionListener(e -> {
+            String user = this.vistaLogin.getTfUser();
+            String password = this.vistaLogin.getTfPass();
+
             if(validateUser(user,password)){
                 System.out.println("entras a la aplicacion");
             }else{
