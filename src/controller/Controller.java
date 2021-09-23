@@ -1,5 +1,8 @@
 package controller;
 
+
+import static server.querys.ValidateUser.validateUser;
+
 import view.VistaPrincipal;
 
 import java.awt.event.ActionEvent;
@@ -14,15 +17,18 @@ public class Controller {
         this.vistaPrincipal = vistaPrincipal;
 
         this.vistaPrincipal.getBtValidate().addActionListener(e -> {
-            this.vistaPrincipal.setText("ahora con una expresion lambda");
+            String user = this.vistaPrincipal.getTfUser();
+            String password = this.vistaPrincipal.getTfPass();
+            System.out.println(user+password);
+            //todo crear metodo que compruebe si es un usuario valido
+            if(validateUser(user,password)){
+                System.out.println("entras a la aplicacion");
+            }else{
+                System.out.println("usuario invalido");
+            }
         });
 
     }
 
 
-
-//    @Override
-//    public void actionPerformed(ActionEvent e) {
-//        this.vistaPrincipal.setText("hola");
-//    }
 }

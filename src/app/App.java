@@ -1,7 +1,6 @@
 package app;
 
 import controller.Controller;
-import server.Conexion;
 import view.VistaPrincipal;
 
 public class App {

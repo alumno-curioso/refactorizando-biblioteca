@@ -37,12 +37,12 @@ public class VistaPrincipal extends JFrame {
 
     }
 
-    public JTextField getTfUser() {
-        return tfUser;
+    public String getTfUser() {
+        return tfUser.getText();
     }
 
-    public JTextField getTfPass() {
-        return tfPass;
+    public String getTfPass() {
+        return tfPass.getText();
     }
 
     public JButton getBtValidate() {
