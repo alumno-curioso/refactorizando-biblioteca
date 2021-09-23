@@ -31,12 +31,7 @@ public class Conexion {
         }
     }
 
-    //    con = DriverManager.getConnection(URL_DB,USER_DB,PASSWORD_DB);
-//            System.out.println("conectado");
-//            con.close();
-//
-//            e.printStackTrace();
-//            System.out.println("ha ocurrido un error");
+
 
 
 
