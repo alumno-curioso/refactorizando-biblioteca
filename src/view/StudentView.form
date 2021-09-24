@@ -62,7 +62,7 @@
               <background color="-8370338"/>
               <font name="JetBrains Mono ExtraBold" size="16"/>
               <foreground color="-4162"/>
-              <text value="PRESTAMOS"/>
+              <text value="BORRAR"/>
             </properties>
           </component>
           <component id="15f47" class="javax.swing.JButton" binding="jbReadStudent">
@@ -144,7 +144,7 @@
           <text value="2.APELLIDO :"/>
         </properties>
       </component>
-      <component id="883fa" class="javax.swing.JTextField" binding="textField1" default-binding="true">
+      <component id="883fa" class="javax.swing.JTextField" binding="jtDNI">
         <constraints>
           <grid row="1" column="9" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
             <minimum-size width="150" height="-1"/>
@@ -155,7 +155,7 @@
           <text value=""/>
         </properties>
       </component>
-      <component id="6a3d5" class="javax.swing.JTextField" default-binding="true">
+      <component id="6a3d5" class="javax.swing.JTextField" binding="jtStudentName">
         <constraints>
           <grid row="2" column="9" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
             <minimum-size width="150" height="-1"/>
@@ -164,7 +164,7 @@
         </constraints>
         <properties/>
       </component>
-      <component id="9ac35" class="javax.swing.JTextField" default-binding="true">
+      <component id="9ac35" class="javax.swing.JTextField" binding="jtStudentLastName1">
         <constraints>
           <grid row="3" column="9" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
             <minimum-size width="150" height="-1"/>
@@ -173,7 +173,7 @@
         </constraints>
         <properties/>
       </component>
-      <component id="a3740" class="javax.swing.JTextField" default-binding="true">
+      <component id="a3740" class="javax.swing.JTextField" binding="jtStudentLastName2">
         <constraints>
           <grid row="4" column="9" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
             <minimum-size width="150" height="-1"/>
