@@ -17,7 +17,7 @@ public class VistaLogin extends JFrame {
 
     public VistaLogin() {
         setTitle("Login usuario");
-        setSize(400,400);
+        setSize(DefaultParameters.WINDOWS_SIZE);
         setLocationRelativeTo(null);
 
         add(panel1);

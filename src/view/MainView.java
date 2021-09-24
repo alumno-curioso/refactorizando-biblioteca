@@ -14,7 +14,7 @@ public class MainView extends JFrame {
     public MainView(){
 
         setTitle("Menu biblioteca");
-        setSize(600,600);
+        setSize(DefaultParameters.WINDOWS_SIZE);
         setLocationRelativeTo(null);
 
         add(jpMainView);
