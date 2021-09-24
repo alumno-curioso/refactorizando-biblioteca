@@ -4,16 +4,16 @@ import javax.swing.*;
 
 public class LoanView  extends JFrame{
     private JPanel jpLoanView;
-    private JTextField tfDNIStudent;
-    private JLabel lbDNIStudentd;
-    private JTextField tfIDBook;
-    private JLabel lbIDBook;
-    private JButton jbLoan;
-    private JLabel lbLoanView;
-    private JButton jbReturn;
-    private JButton jbReturnMainView;
     private JLabel jlDNIStudent;
+    private JLabel lbLoanView;
+    private JLabel lbIDBook;
+    private JLabel lbDNIStudentd;
+    private JTextField tfDNIStudent;
+    private JTextField tfIDBook;
     private JTextField jtDNIStudent;
+    private JButton jbLoan;
+    private JButton jbReturnMainView;
+    private JButton jbReturn;
 
     public LoanView(){
 
@@ -27,11 +27,11 @@ public class LoanView  extends JFrame{
     }
 
     public String getTfDNIStudent() {
-        return tfDNIStudent.getText();
+        return this.tfDNIStudent.getText();
     }
 
     public String getTfIDBook() {
-        return tfIDBook.getText();
+        return this.tfIDBook.getText();
     }
 
     public JButton getJbLoan() {
