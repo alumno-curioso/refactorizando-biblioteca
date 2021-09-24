@@ -14,9 +14,9 @@ public class Controller {
     private MainView mainView;
 
 
-    public Controller(VistaLogin vistaLogin){
+    public Controller(VistaLogin vistaLogin, MainView mainView){
         this.vistaLogin = vistaLogin;
-
+        this.mainView = mainView;
         this.vistaLogin.getBtValidate().addActionListener(e -> {
             String user = this.vistaLogin.getTfUser();
             String password = this.vistaLogin.getTfPass();
@@ -30,7 +30,9 @@ public class Controller {
                 System.out.println("usuario invalido");
             }
         });
-        this.mainView.getJbUsers().addActionListener(e -> {
+        this.mainView.getJbStudent().addActionListener(e -> {
+
+            System.out.println("estudentes");
             /**todo
              * hacer vista usuarios
              * aniadir botones para el CRUD
@@ -38,12 +40,14 @@ public class Controller {
              */
         });
         this.mainView.getJbArchive().addActionListener(e->{
+            System.out.println("bibliooooo");
             /**todo
              * hecer vista para gestion de la biblioteca
              * hacer CRUD sobre los libros
              */
         });
         this.mainView.getJbUsers().addActionListener(e->{
+            System.out.println("userrrssssss");
             /**todo
              * hacer menu para los usuarios
              * CRUD solo usuario administrador
