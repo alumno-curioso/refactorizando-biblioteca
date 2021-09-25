@@ -2,7 +2,7 @@ package view;
 
 import javax.swing.*;
 
-public class libraryView {
+public class libraryView extends JFrame {
     private JPanel jpLibrary;
     private JLabel jlLibraryPanel;
     private JLabel jlBookTitle;
@@ -20,4 +20,10 @@ public class libraryView {
     private JTextField jtBookEdit;
     private JTextField jtBookCourse;
     private JTextField jtBookState;
+
+    public libraryView(){
+        //todo hacer contructor
+
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+    }
 }

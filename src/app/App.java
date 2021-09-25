@@ -7,8 +7,7 @@ import view.LoginView;
 public class App {
     public static void main(String[] args) {
 //        new Conexion();
-          Controller controller = new Controller(new LoginView(), new MainView());
-
+          Controller controller = new Controller();
 
     }
 }

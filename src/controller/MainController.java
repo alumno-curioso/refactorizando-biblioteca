@@ -7,7 +7,7 @@ public class MainController {
     private Controller controller;
 
      public MainController(){
-         this.controller =new Controller(new LoginView(),new MainView());
+         this.controller =new Controller();
 
      }
 }
