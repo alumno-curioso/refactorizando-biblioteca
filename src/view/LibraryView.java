@@ -2,7 +2,7 @@ package view;
 
 import javax.swing.*;
 
-public class libraryView extends JFrame {
+public class LibraryView extends JFrame {
     private JPanel jpLibrary;
 
     private JLabel jlLibraryPanel;
@@ -24,7 +24,7 @@ public class libraryView extends JFrame {
     private JButton jbReadBook;
     private JButton jbReturn;
 
-    public libraryView(){
+    public LibraryView(){
         setTitle("Gestion Biblioteca");
         setSize(DefaultParameters.WINDOWS_SIZE);
         setLocationRelativeTo(null);
