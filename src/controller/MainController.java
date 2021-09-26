@@ -21,6 +21,7 @@ public class MainController {
             System.out.println("biblioteca");
         });
         mainView.getJbExit().addActionListener(e->{
+            //todo preguntar si desea salir realmente
             System.exit(0);
         });
     }
