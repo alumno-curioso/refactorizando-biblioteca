@@ -3,26 +3,50 @@ package view;
 import javax.swing.*;
 
 public class StudentView extends JFrame {
+
     private JPanel jpStudentView;
-    private JButton jbLoan;
-    private JButton jcCreateStudent;
-    private JButton jbUpdateStudent;
-    private JButton jbReadStudent;
-    private JButton jbDeleteStudent;
+
     private JLabel jlDNI;
     private JLabel jlName;
+    private JLabel jlStudent;
+
     private JTextField jtDNI;
     private JTextField jtStudentName;
     private JTextField jtStudentLastName1;
     private JTextField jtStudentLastName2;
 
+    private JButton jbLoan;
+    private JButton jcCreateStudent;
+    private JButton jbUpdateStudent;
+    private JButton jbReadStudent;
+    private JButton jbDeleteStudent;
+    private JButton jbReturnMainView;
+
     public StudentView(){
         setSize(DefaultParameters.WINDOWS_SIZE);
         setLocationRelativeTo(null);
 
+        setTitle("Gestios de alumnos");
+
         add(jpStudentView);
 
         setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+    }
+
+    public String getJtDNI() {
+        return jtDNI.getText();
+    }
+
+    public String getJtStudentName() {
+        return jtStudentName.getText();
+    }
+
+    public String getJtStudentLastName1() {
+        return jtStudentLastName1.getText();
+    }
+
+    public String getJtStudentLastName2() {
+        return jtStudentLastName2.getText();
     }
 
     public JButton getJbLoan() {
@@ -45,19 +69,6 @@ public class StudentView extends JFrame {
         return jbDeleteStudent;
     }
 
-    public String getJtDNI() {
-        return jtDNI.getText();
-    }
+    public JButton getJbReturnMainView(){ return jbReturnMainView; }
 
-    public String getJtStudentName() {
-        return jtStudentName.getText();
-    }
-
-    public String getJtStudentLastName1() {
-        return jtStudentLastName1.getText();
-    }
-
-    public String getJtStudentLastName2() {
-        return jtStudentLastName2.getText();
-    }
 }

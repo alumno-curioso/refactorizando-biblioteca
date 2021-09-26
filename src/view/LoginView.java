@@ -25,16 +25,6 @@ public class LoginView extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
 
-
-//        btValidate.addActionListener(new ActionListener() {
-//            @Override
-//            public void actionPerformed(ActionEvent e) {
-//                //todo llamar al controlador para conectar con la base y verificar al ususario
-//                System.out.println("hi world!!!");
-//            }
-//        });
-
-
     }
 
     public String getTfUser() {

@@ -9,12 +9,9 @@ import view.LoginView;
 public class LoginController {
 
     private LoginView loginView;
-//    private MainView mainView;
-
 
     public LoginController(){
         this.loginView = new LoginView();
-//        this.mainView = new MainView();
         this.loginView.getBtValidate().addActionListener(e -> {
             String user = this.loginView.getTfUser();
             String password = this.loginView.getTfPass();

@@ -4,21 +4,26 @@ import javax.swing.*;
 
 public class UserView extends JFrame{
     private JPanel jpUserView;
+
     private JLabel jlUserId;
     private JLabel jlUserPanel;
     private JLabel jlPassword;
+
     private JTextField jtUserId;
     private JTextField jtUserPassword;
+
     private JButton jcCreateUser;
     private JButton jbUpdateUser;
     private JButton jbDeleteUser;
     private JButton jbReadUser;
-    private JButton jbReturn;
+    private JButton jbReturnMainView;
 
     public UserView(){
 
         setSize(DefaultParameters.WINDOWS_SIZE);
         setLocationRelativeTo(null);
+
+        setTitle("Gestion de usuarios");
 
         add(jpUserView);
 
@@ -50,7 +55,7 @@ public class UserView extends JFrame{
         return this.jbReadUser;
    }
 
-   public JButton getJbReturn(){
-        return this.jbReturn;
+   public JButton getJbReturnMainView(){
+        return this.jbReturnMainView;
    }
 }

@@ -4,21 +4,25 @@ import javax.swing.*;
 
 public class LoanView  extends JFrame{
     private JPanel jpLoanView;
+
     private JLabel jlDNIStudent;
     private JLabel lbLoanView;
     private JLabel lbIDBook;
     private JLabel lbDNIStudentd;
-    private JTextField tfDNIStudent;
+
     private JTextField tfIDBook;
     private JTextField jtDNIStudent;
+
     private JButton jbLoan;
     private JButton jbReturnMainView;
-    private JButton jbReturn;
+    private JButton jbLoanReturn;
 
     public LoanView(){
 
         setSize(DefaultParameters.WINDOWS_SIZE);
         setLocationRelativeTo(null);
+
+        setTitle("Gestion de prestamos");
 
         add(jpLoanView);
 
@@ -26,8 +30,8 @@ public class LoanView  extends JFrame{
         setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
     }
 
-    public String getTfDNIStudent() {
-        return this.tfDNIStudent.getText();
+    public String getJtDNIStudent() {
+        return this.jtDNIStudent.getText();
     }
 
     public String getTfIDBook() {
@@ -38,8 +42,8 @@ public class LoanView  extends JFrame{
         return jbLoan;
     }
 
-    public JButton getJbReturn() {
-        return jbReturn;
+    public JButton getJbLoanReturn() {
+        return jbLoanReturn;
     }
 
     public JButton getJbReturnMainView() {
