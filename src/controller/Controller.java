@@ -22,50 +22,12 @@ public class Controller {
             if(validateUser(user,password)){
                 System.out.println("entras a la aplicacion");
                 this.loginView.dispose();
-                MainView mainView = new MainView();
-                mainView.setVisible(true);
+                MainController mainController = new MainController();
+
             }else{
                 System.out.println("usuario invalido");
             }
         });
-
-        //todo mover toda la logica al main controller y luego borrar
-//        this.mainView.getJbStudent().addActionListener(e -> {
-//
-//            System.out.println("estudentes");
-//            /**todo
-//             * hacer vista usuarios
-//             * aniadir botones para el CRUD
-//             * realizar los modelos para los usuarios
-//             */
-//        });
-//        this.mainView.getJbArchive().addActionListener(e->{
-//            System.out.println("bibliooooo");
-//            /**todo
-//             * hecer vista para gestion de la biblioteca
-//             * hacer CRUD sobre los libros
-//             */
-//        });
-//        this.mainView.getJbUsers().addActionListener(e->{
-//            System.out.println("userrrssssss");
-//            /**todo
-//             * hacer menu para los usuarios
-//             * CRUD solo usuario administrador
-//             *
-//             */
-//        });
-////        this.mainView.getJbExit().add
-////                addWindowListener(new Java.awt.event.WindowAdapter() {
-////            @Override
-////            public void windowClosing(Java.awt.event.WindowEvent windowEvent) {
-////                if (JOptionPane.showConfirmDialog(frame,
-////                        "Are you sure you want to close this window?", "Close Window?",
-////                        JOptionPane.YES_NO_OPTION,
-////                        JOptionPane.QUESTION_MESSAGE) == JOptionPane.YES_OPTION){
-////                    System.exit(0);
-////                }
-////            }
-////        });
 
     }
 
