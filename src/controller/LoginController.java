@@ -6,13 +6,13 @@ import static server.querys.ValidateUser.validateUser;
 import view.MainView;
 import view.LoginView;
 
-public class Controller {
+public class LoginController {
 
     private LoginView loginView;
 //    private MainView mainView;
 
 
-    public Controller(){
+    public LoginController(){
         this.loginView = new LoginView();
 //        this.mainView = new MainView();
         this.loginView.getBtValidate().addActionListener(e -> {

@@ -7,7 +7,7 @@ encontras lo siguiente
 
 - app:
   - este paquete solo contendra la clase que lanzara la app
-- controller:
+- loginController:
   - clases que puedan ser controladores
 - view:
   - las vistas que extraigamos de la refactorizacion
@@ -42,8 +42,9 @@ todo lo realizado en este repositorio esta realizado por un alumno-curioso y seg
 
 - [ ] Crear arquitectura del proyecto
 - [ ] disccionar por completo el codigo original
-- [ ] crear vistas
-- [ ] crear conexion
+- [x] crear vistas
+- [x] crear conexion
+- [ ] implementar pool de conexiones
 - [ ] crear controladores
 - [ ] crear modelos
 - [ ] pasarlo bien

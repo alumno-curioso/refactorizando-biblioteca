@@ -1,13 +1,11 @@
 package app;
 
-import controller.Controller;
-import view.MainView;
-import view.LoginView;
+import controller.LoginController;
 
 public class App {
     public static void main(String[] args) {
 //        new Conexion();
-          Controller controller = new Controller();
+          LoginController loginController = new LoginController();
 
     }
 }
