@@ -8,32 +8,21 @@ public class Conexion {
     private final String USER_DB = "root";
     private final String PASSWORD_DB = "root";
 
-    private Connection con;
+    private static Connection conexion;
 
-    public Conexion(){
+    private Conexion(){
         try {
-            con = DriverManager.getConnection(URL_DB,USER_DB,PASSWORD_DB);
+            conexion = DriverManager.getConnection(URL_DB,USER_DB,PASSWORD_DB);
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
 
-    public Connection getCon() {
-        return con;
-    }
-
-    public void close(){
-
-        try {
-            this.con.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
+    public static Connection getCon() {
+        if(conexion==null){
+            new Conexion();
         }
+        return conexion;
     }
-
-
-
-
-
 
 }
