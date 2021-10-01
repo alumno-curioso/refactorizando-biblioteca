@@ -1,4 +1,4 @@
-package server.querys;
+package server.querys.tools;
 
 import server.connection.Conexion;
 

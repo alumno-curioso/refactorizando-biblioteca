@@ -4,8 +4,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import static server.querys.PredefinedQuerys.CHECK_USER;
-import static server.querys.QueryExecutor.*;
+import static server.querys.tools.PredefinedQuerys.CHECK_USER;
+import static server.querys.tools.QueryExecutor.*;
 
 public class ValidateUser {
 
