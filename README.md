@@ -41,11 +41,11 @@ todo lo realizado en este repositorio esta realizado por un alumno-curioso y seg
 # LIST OF TODOS
 
 - [ ] Crear arquitectura del proyecto
-- [ ] disccionar por completo el codigo original
+- [x] disccionar por completo el codigo original
 - [x] crear vistas
 - [x] crear conexion
 - [ ] implementar pool de conexiones
-- [ ] crear controladores
+- [x] crear controladores
 - [ ] crear modelos
 - [ ] pasarlo bien
   
