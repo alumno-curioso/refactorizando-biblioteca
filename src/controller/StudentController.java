@@ -9,6 +9,8 @@ public class StudentController {
     public StudentController(){
         studentView = new StudentView();
 
+        studentView.setVisible(true);
+
         studentView.getJcCreateStudent().addActionListener(e->{
             //todo crear estudiante
         });

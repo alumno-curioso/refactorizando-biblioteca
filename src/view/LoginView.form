@@ -35,6 +35,7 @@
               </grid>
             </constraints>
             <properties>
+              <font name="JetBrains Mono Medium" size="16"/>
               <foreground color="-3630213"/>
               <text value="Usuario"/>
             </properties>
@@ -87,8 +88,9 @@
               </grid>
             </constraints>
             <properties>
+              <font name="JetBrains Mono Medium" size="16"/>
               <foreground color="-3630213"/>
-              <text value="contraseña"/>
+              <text value="Contraseña"/>
             </properties>
           </component>
           <component id="dee7c" class="javax.swing.JTextField" binding="tfPass">

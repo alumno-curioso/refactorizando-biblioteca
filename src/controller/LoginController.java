@@ -3,8 +3,11 @@ package controller;
 
 import static server.querys.ValidateUser.validateUser;
 
-import view.MainView;
 import view.LoginView;
+
+import javax.swing.*;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
 
 public class LoginController {
 
@@ -12,6 +15,7 @@ public class LoginController {
 
     public LoginController(){
         this.loginView = new LoginView();
+
         this.loginView.getBtValidate().addActionListener(e -> {
             String user = this.loginView.getTfUser();
             String password = this.loginView.getTfPass();
@@ -19,10 +23,16 @@ public class LoginController {
             if(validateUser(user,password)){
                 System.out.println("entras a la aplicacion");
                 this.loginView.dispose();
-                MainController mainController = new MainController();
+//                MainController mainController = new MainController();
+                MainController.runMainView();
 
             }else{
                 System.out.println("usuario invalido");
+                JOptionPane.showMessageDialog(
+                        this.loginView,
+                        "Usuario o contraseña invalida\npor favor introduzca de nuevo o salga del programa",
+                        "LOGIN INCORRECTO",
+                        JOptionPane.ERROR_MESSAGE);
             }
         });
 
