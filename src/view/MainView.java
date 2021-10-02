@@ -2,6 +2,8 @@ package view;
 
 import javax.swing.*;
 
+import static view.properties.DefaultSizeParameters.*;
+
 public class MainView extends JFrame {
     private JPanel jpMainView;
     private JLabel lbMainView;
@@ -14,13 +16,14 @@ public class MainView extends JFrame {
     public MainView(){
 
         setTitle("Menu biblioteca");
-        setSize(DefaultParameters.WINDOWS_SIZE);
+        setSize(MAIN_SIZE);
         setLocationRelativeTo(null);
 
         add(jpMainView);
 
+        setVisible(true);
 
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
     public JButton getJbStudent() {

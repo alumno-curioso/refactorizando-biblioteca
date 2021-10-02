@@ -1,5 +1,7 @@
 package view;
 
+import view.properties.DefaultSizeParameters;
+
 import javax.swing.*;
 
 public class LibraryView extends JFrame {
@@ -26,12 +28,13 @@ public class LibraryView extends JFrame {
 
     public LibraryView(){
         setTitle("Gestion Biblioteca");
-        setSize(DefaultParameters.WINDOWS_SIZE);
+        setSize(DefaultSizeParameters.WINDOWS_SIZE);
         setLocationRelativeTo(null);
 
         add(jpLibrary);
 
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        setVisible(true);
     }
 
     public String getJtBookTitle() {

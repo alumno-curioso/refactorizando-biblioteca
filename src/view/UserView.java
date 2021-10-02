@@ -1,5 +1,7 @@
 package view;
 
+import view.properties.DefaultSizeParameters;
+
 import javax.swing.*;
 
 public class UserView extends JFrame{
@@ -20,7 +22,7 @@ public class UserView extends JFrame{
 
     public UserView(){
 
-        setSize(DefaultParameters.WINDOWS_SIZE);
+        setSize(DefaultSizeParameters.WINDOWS_SIZE);
         setLocationRelativeTo(null);
 
         setTitle("Gestion de usuarios");

@@ -1,8 +1,8 @@
 package view;
 
+import view.properties.DefaultSizeParameters;
+
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class LoginView extends JFrame {
     private JPanel panel1;
@@ -17,7 +17,7 @@ public class LoginView extends JFrame {
 
     public LoginView() {
         setTitle("Login usuario");
-        setSize(DefaultParameters.WINDOWS_SIZE);
+        setSize(DefaultSizeParameters.WINDOWS_SIZE);
         setLocationRelativeTo(null);
 
         add(panel1);

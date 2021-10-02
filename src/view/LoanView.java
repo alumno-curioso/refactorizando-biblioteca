@@ -1,5 +1,7 @@
 package view;
 
+import view.properties.DefaultSizeParameters;
+
 import javax.swing.*;
 
 public class LoanView  extends JFrame{
@@ -19,7 +21,7 @@ public class LoanView  extends JFrame{
 
     public LoanView(){
 
-        setSize(DefaultParameters.WINDOWS_SIZE);
+        setSize(DefaultSizeParameters.WINDOWS_SIZE);
         setLocationRelativeTo(null);
 
         setTitle("Gestion de prestamos");
@@ -28,6 +30,7 @@ public class LoanView  extends JFrame{
 
 
         setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+        setVisible(true);
     }
 
     public String getJtDNIStudent() {

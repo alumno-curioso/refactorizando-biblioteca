@@ -23,7 +23,6 @@ public class LoginController {
             if(validateUser(user,password)){
                 System.out.println("entras a la aplicacion");
                 this.loginView.dispose();
-//                MainController mainController = new MainController();
                 MainController.runMainView();
 
             }else{
