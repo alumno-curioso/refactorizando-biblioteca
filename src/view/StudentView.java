@@ -1,8 +1,8 @@
 package view;
 
-import view.properties.DefaultSizeParameters;
-
 import javax.swing.*;
+
+import static view.properties.DefaultSizeParameters.*;
 
 public class StudentView extends JFrame {
 
@@ -23,9 +23,11 @@ public class StudentView extends JFrame {
     private JButton jbReadStudent;
     private JButton jbDeleteStudent;
     private JButton jbReturnMainView;
+    private JPanel jpTable;
+    private JTable jtStudents;
 
     public StudentView(){
-        setSize(DefaultSizeParameters.WINDOWS_SIZE);
+        setSize(STUDENT_VIEW);
         setLocationRelativeTo(null);
 
         setTitle("Gestios de alumnos");

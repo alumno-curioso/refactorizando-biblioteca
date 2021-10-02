@@ -28,6 +28,11 @@ public class StudentController {
             studentView.getJbDeleteStudent().addActionListener(e->{
                 //todo delete student
             });
+            studentView.getJbLoan().addActionListener(e->{
+                //todo hacer metodo prestamos
+                studentView.dispose();
+                LoanController.runLoanView();
+            });
             studentView.getJbReturnMainView().addActionListener(e->{
                 //todo volver a pagina  principal
                 studentView.dispose();

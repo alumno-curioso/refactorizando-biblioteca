@@ -6,16 +6,16 @@ import static server.querys.ValidateUser.validateUser;
 import view.LoginView;
 
 import javax.swing.*;
-import java.awt.event.WindowEvent;
-import java.awt.event.WindowListener;
+import java.awt.event.*;
 
-public class LoginController {
+public class LoginController implements ActionListener, MouseListener {
 
     private LoginView loginView;
 
     public LoginController(){
         this.loginView = new LoginView();
-
+        this.loginView.getBtValidate().addActionListener(this);
+        this.loginView.getJlUser().addMouseListener(this);
         this.loginView.getBtValidate().addActionListener(e -> {
             String user = this.loginView.getTfUser();
             String password = this.loginView.getTfPass();
@@ -38,4 +38,38 @@ public class LoginController {
     }
 
 
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if((JButton) e.getSource() == loginView.getBtValidate()) {
+            System.out.println("has pulsado el boton de login");
+        }
+
+    }
+
+    @Override
+    public void mouseClicked(MouseEvent e) {
+        if((JLabel) e.getSource() == loginView.getJlUser()){
+            System.out.println("chacho no me piques");
+        }
+    }
+
+    @Override
+    public void mousePressed(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+        System.out.println("ya estas encima");
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
+
+    }
 }

@@ -1,6 +1,6 @@
 package view;
 
-import view.properties.DefaultSizeParameters;
+import static view.properties.DefaultSizeParameters.*;
 
 import javax.swing.*;
 
@@ -25,10 +25,13 @@ public class LibraryView extends JFrame {
     private JButton jbDeleteBook;
     private JButton jbReadBook;
     private JButton jbReturn;
+    private JPanel jpCrudMenu;
+    private JPanel jpTable;
+    private JTable jtLibrary;
 
     public LibraryView(){
         setTitle("Gestion Biblioteca");
-        setSize(DefaultSizeParameters.WINDOWS_SIZE);
+        setSize(LIBRARY_SIZE);
         setLocationRelativeTo(null);
 
         add(jpLibrary);

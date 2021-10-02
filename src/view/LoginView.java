@@ -39,5 +39,7 @@ public class LoginView extends JFrame {
         return btValidate;
     }
 
-
+    public JLabel getJlUser() {
+        return jlUser;
+    }
 }
