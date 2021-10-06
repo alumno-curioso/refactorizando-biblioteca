@@ -1,33 +1,26 @@
 package controller.controllers;
 
+import controller.events.LibraryEvents;
 import view.LibraryView;
 
 public class LibraryController {
 
     private static LibraryView libraryView;
+    private static LibraryEvents libraryEvents;
 
     private LibraryController(){}
 
     public static void runLibrayView(){
         if(libraryView==null) {
             libraryView = new LibraryView();
+            libraryEvents = new LibraryEvents(libraryView);
 
-            libraryView.getJcCreateBook().addActionListener(e -> {
-                //todo añadir nuevo libro a la biblioteca
-            });
-            libraryView.getJbReadBook().addActionListener(e -> {
-                //todo leer informacion de la base de  datos
-            });
-            libraryView.getJbUpdateBook().addActionListener(e -> {
-                //todo metodo update para un librod e la biblioteca
-            });
-            libraryView.getJbDeleteBook().addActionListener(e -> {
-                //todo metodo borrar un libro de la biblioteca
-            });
-            libraryView.getJbReturn().addActionListener(e -> {
-                libraryView.dispose();
-                MainController.runMainView();
-            });
+            libraryView.getJcCreateBook().addActionListener(libraryEvents);
+            libraryView.getJbReadBook().addActionListener(libraryEvents);
+            libraryView.getJbUpdateBook().addActionListener(libraryEvents);
+            libraryView.getJbDeleteBook().addActionListener(libraryEvents);
+            libraryView.getJbReturn().addActionListener(libraryEvents);
+
         }
         libraryView.setVisible(true);
     }

@@ -1,33 +1,25 @@
 package controller.controllers;
 
+import controller.events.UserEvents;
 import view.UserView;
 
 public class UserController {
 
     private static UserView userView;
+    private static UserEvents userEvents;
 
     private UserController(){}
 
     public static void runUserView(){
         if(userView==null) {
             userView = new UserView();
+            userEvents= new UserEvents(userView);
 
-            userView.getJcCreateUser().addActionListener(e -> {
-                //todo crear metodo para insertar nuevo Usuario
-            });
-            userView.getJbReadUser().addActionListener(e -> {
-                //todo crear metodo para ver la tabla
-            });
-            userView.getJbUpdateUser().addActionListener(e -> {
-                //todo modificar un Usuario
-            });
-            userView.getJbDeleteUser().addActionListener(e -> {
-                //todo elimnar Usuario
-            });
-            userView.getJbReturnMainView().addActionListener(e -> {
-                userView.dispose();
-                MainController.runMainView();
-            });
+            userView.getJcCreateUser().addActionListener(userEvents);
+            userView.getJbReadUser().addActionListener(userEvents);
+            userView.getJbUpdateUser().addActionListener(userEvents);
+            userView.getJbDeleteUser().addActionListener(userEvents);
+            userView.getJbReturnMainView().addActionListener(userEvents);
         }
         userView.setVisible(true);
     }

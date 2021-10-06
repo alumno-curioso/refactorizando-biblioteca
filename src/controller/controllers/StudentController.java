@@ -1,11 +1,13 @@
 package controller.controllers;
 
+import controller.events.StudentsEvents;
 import model.tools.tables.GetTableModel;
 import view.StudentView;
 
 public class StudentController {
 
    private static StudentView studentView;
+   private static StudentsEvents studentsEvents;
 
     private StudentController(){
 
@@ -14,36 +16,16 @@ public class StudentController {
     public static void runStudentView(){
         if(studentView==null){
             studentView = new StudentView();
+            studentsEvents = new StudentsEvents(studentView);
 
             studentView.setVisible(true);
 
-            studentView.getJcCreateStudent().addActionListener(e->{
-                //todo crear estudiante
-            });
-            studentView.getJbReadStudent().addActionListener(e->{
-                //todo read estudiante
-
-                studentView.getJtStudents().setModel(GetTableModel.getTableModel("alumnos"));
-
-
-
-            });
-            studentView.getJbUpdateStudent().addActionListener(e->{
-                //todo update studiante
-            });
-            studentView.getJbDeleteStudent().addActionListener(e->{
-                //todo delete student
-            });
-            studentView.getJbLoan().addActionListener(e->{
-                //todo hacer metodo prestamos
-                studentView.dispose();
-                LoanController.runLoanView();
-            });
-            studentView.getJbReturnMainView().addActionListener(e->{
-                //todo volver a pagina  principal
-                studentView.dispose();
-                MainController.runMainView();
-            });
+            studentView.getJcCreateStudent().addActionListener(studentsEvents);
+            studentView.getJbReadStudent().addActionListener(studentsEvents);
+            studentView.getJbUpdateStudent().addActionListener(studentsEvents);
+            studentView.getJbDeleteStudent().addActionListener(studentsEvents);
+            studentView.getJbLoan().addActionListener(studentsEvents);
+            studentView.getJbReturnMainView().addActionListener(studentsEvents);
         }
         studentView.setVisible(true);
     }
