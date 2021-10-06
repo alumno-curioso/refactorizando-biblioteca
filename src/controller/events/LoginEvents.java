@@ -1,12 +1,12 @@
 package controller.events;
 
-import controller.controllers.LoginController;
-import controller.controllers.MainController;
-import view.LoginView;
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
+
+import controller.controllers.MainController;
+import view.LoginView;
+
 
 import static server.querys.ValidateUser.validateUser;
 
