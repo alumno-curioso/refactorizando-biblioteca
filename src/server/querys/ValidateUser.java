@@ -12,9 +12,7 @@ public class ValidateUser {
     private static PreparedStatement statement;
     private static ResultSet rs;
 
-    public static boolean validateUser(String user, String password){
-
-        try {
+    public static boolean validateUser(String user, String password) throws SQLException {
 
             statement = queryExecutor(CHECK_USER);
             statement.setString(1,user);
@@ -22,12 +20,8 @@ public class ValidateUser {
 
             rs = statement.executeQuery();
 
-            if(rs.next()) return true;
 
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+            return (rs.next())?true:false;
 
-        return false;
     }
 }

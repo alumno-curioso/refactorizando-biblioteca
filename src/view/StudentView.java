@@ -75,4 +75,7 @@ public class StudentView extends JFrame {
 
     public JButton getJbReturnMainView(){ return jbReturnMainView; }
 
+    public JTable getJtStudents() {
+        return jtStudents;
+    }
 }

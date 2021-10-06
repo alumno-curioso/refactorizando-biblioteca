@@ -1,6 +1,5 @@
-package controller;
+package controller.controllers;
 
-import com.sun.tools.javac.Main;
 import view.MainView;
 
 public class MainController {

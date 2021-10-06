@@ -1,41 +1,56 @@
 package controller.events;
 
-import controller.MainController;
+import controller.controllers.LoginController;
+import controller.controllers.MainController;
+import view.LoginView;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
-import java.util.EventListener;
+import java.sql.SQLException;
 
 import static server.querys.ValidateUser.validateUser;
 
-public class LoginEvents {
+public class LoginEvents implements ActionListener {
+    private LoginView loginView;
 
-//    @Override
-//    public void actionPerformed(ActionEvent e) {
-//        String user = this.loginView.getTfUser();
-//        String password = this.loginView.getTfPass();
-//
-//        if(validateUser(user,password)){
-//            System.out.println("entras a la aplicacion");
-//            this.loginView.dispose();
-//            MainController mainController = new MainController();
-//
-//        }
-//
-//    @Override
-//    public void keyTyped(KeyEvent e) {
-//
-//    }
-//
-//    @Override
-//    public void keyPressed(KeyEvent e) {
-//
-//    }
-//
-//    @Override
-//    public void keyReleased(KeyEvent e) {
-//
-//    }
+
+    public LoginEvents(LoginView loginView){
+        this.loginView = loginView;
+
+    }
+    @Override
+    public void actionPerformed(ActionEvent e) {
+
+        String selectedAction = e.getActionCommand();
+
+        System.out.println(selectedAction);
+
+        if(selectedAction.equals("LOGIN")){
+
+            //todo ver com elevar la excepcion en este metodo
+            try {
+                if (validate()) {
+                    System.out.println("conectar");
+                    this.loginView.dispose();
+                    MainController.runMainView();
+                }
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            }
+
+        }
+
+    }
+
+    private boolean validate() throws SQLException {
+
+        String  user        = this.loginView.getTfUser(),
+                password    = this.loginView.getTfPass();
+
+        return (validateUser(user,password));
+    }
+
+
+
+
 }

@@ -10,23 +10,19 @@ public class Conexion {
 
     private static Connection conexion;
 
-    private Conexion(){
+    private Conexion() {
 
     }
 
-    public static Connection getCon() {
-        if(conexion==null){
+    public static Connection getCon() throws SQLException {
+        if (conexion == null) {
             conexion = abrirConexion();
         }
         return conexion;
     }
 
-    public static Connection abrirConexion(){
-        try {
-            conexion = DriverManager.getConnection(URL_DB,USER_DB,PASSWORD_DB);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+    public static Connection abrirConexion() throws SQLException {
+        conexion = DriverManager.getConnection(URL_DB, USER_DB, PASSWORD_DB);
         return conexion;
     }
 

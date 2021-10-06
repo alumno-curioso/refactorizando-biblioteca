@@ -1,5 +1,6 @@
-package controller;
+package controller.controllers;
 
+import model.tools.tables.GetTableModel;
 import view.StudentView;
 
 public class StudentController {
@@ -21,6 +22,11 @@ public class StudentController {
             });
             studentView.getJbReadStudent().addActionListener(e->{
                 //todo read estudiante
+
+                studentView.getJtStudents().setModel(GetTableModel.getTableModel("alumnos"));
+
+
+
             });
             studentView.getJbUpdateStudent().addActionListener(e->{
                 //todo update studiante
