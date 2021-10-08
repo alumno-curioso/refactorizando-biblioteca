@@ -39,29 +39,9 @@ public class StudentsEvents implements ActionListener {
         if(selectedAction.equals("CONSULTAR")){
             System.out.println("ok");
             try {
+                //TODO refactorizar esta parte del codigo
 
-                System.out.println(GetRowSize.getRowSize("alumnos"));
-//                PreparedStatement statement = Conexion.getCon().prepareStatement("select * from ?");
-                Statement statement = Conexion.getCon().createStatement();
-                ResultSet resultSet = statement.executeQuery("select * from alumnos");
-                String[] nombres = new String[GetColumnSize.getColumSize("alumnos")];
-                nombres = GetColumnsNames.getColumnNames("alumnos");
-
-                String[][] info = new String[100][GetColumnSize.getColumSize("alumnos")];
-
-                System.out.println(nombres);
-
-                int count = 0;
-                while (count<100){
-                    resultSet.next();
-                    for (int i = 0; i < info[0].length; i++) {
-                        info[count][i] = resultSet.getString(i+1);
-                    }
-                    count++;
-                }
-                TableModel table = new DefaultTableModel(info,nombres);
-                this.studentView.getJtStudents().setModel(table);
-
+            ShowAllStudents.fillTable(this.studentView);
 
 //                ShowAllStudents.fillTable(studentView);
             } catch (SQLException ex) {

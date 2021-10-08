@@ -13,9 +13,9 @@ public class GetRowSize {
     private static ResultSet resultSet;
 
     public static int getRowSize(String tableNameFromDB) throws SQLException {
-        statement = queryExecutor("select count(*) from ?");
+        statement = queryExecutor("select count(*) from "+tableNameFromDB);
 
-        statement.setString(1,tableNameFromDB);
+//        statement.setString(1,tableNameFromDB);
         resultSet = statement.executeQuery();
 
         resultSet.next();
