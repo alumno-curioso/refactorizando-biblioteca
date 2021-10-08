@@ -12,23 +12,15 @@ public class GetColumnSize {
     private static PreparedStatement statement;
     private static ResultSet resultSet;
 
-    public static int getColumSize(String tableNameFromDB){
+    public static int getColumSize(String tableNameFromDB) throws SQLException {
 
         statement = queryExecutor(GET_COLUMNS_SIZE);
 
-        try {
-            statement.setString(1, tableNameFromDB);
-            resultSet = statement.executeQuery();
+        statement.setString(1, tableNameFromDB);
+        resultSet = statement.executeQuery();
 
-            resultSet.next();
-            return Integer.parseInt(resultSet.getString(1));
+        resultSet.next();
 
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-        return 1;
+        return resultSet.getInt(1);
     }
-
-
 }

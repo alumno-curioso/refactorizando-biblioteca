@@ -1,9 +1,58 @@
 package server.querys.tools;
 
 public class PredefinedQuerys {
+
+    //querys genericas para preparedSteatement
     public final static String GET_COLUMNS = "select COLUMN_NAME from information_schema.COLUMNS where TABLE_NAME=?";
     public final static String GET_COLUMNS_SIZE = "select count(*) from information_schema.COLUMNS where TABLE_NAME=?";
-    public final static String GET_ROWS_SIZE = "select count(*) from ?";
+    //todo metodo rows
+    public final static String GET_ROWS_SIZE = "select count(*) from alumnos";
     public final static String CHECK_USER ="select * from usuarios where usuario=? and clave=?";
-    public final static String ALL_STUDENTS = "select * from usuarios";
+
+    //GET_ALL_INFO
+    public final static String ALL_INFO_FROM_STUDENT_TABLE = "select * from alumnos";
+    public final static String ALL_INFO_FROM_LIBRARY_TABLE = "select * from libros";
+    public final static String ALL_INFO_FROM_LOAN_TABLE = "select * from prestamos";
+    public final static String ALL_INFO_FROM_USER_TABLE = "select * from usuarios";
+
+    //STUDENTS QUERYS
+    //READ
+    public final static String FIND_BY_STUDENT_NAME = "select * from alumnos where nombre= ?";
+    public final static String FIND_BY_STUDENT_FIRST_LAST_NAME = "select * from alumnos where apellido1= ?";
+    public final static String FIND_BY_STUDENT_SECOND_LAST_NAME = "select * from alumnos where apellido2= ?";
+    public final static String FIND_BY_STUDENT_DNI = "select * from alumnos where dni= ?";
+    //TODO crear el resto del crud para alumnos
+    //UPDATE
+    //CREATE
+    //DELETE
+
+    //LIBRARY QUERYS
+    public final static String FIND_BY_BOOK_TITLE = "select * from libros where Titulo =?";
+    public final static String FIND_BY_BOOK_PUBLISHING_HOUSE = "select * from libros where Editorial =?";
+    public final static String FIND_BY_BOOK_AUTOR = "select * from libros where Autor =?";
+    public final static String FIND_BY_BOOK_COURSE = "select * from libros where Asignatura =?";
+
+    //TODO crear el resto dec crud para libros
+    //UPDATE
+    //CREATE
+    //DELETE
+
+    //LOAN QUERYS
+    public final static String FIND_LOAN_BY_STUDENT_CODE= "select * from prestamos where codAlumnos = ?";
+    public final static String FIND_LOAN_BY_BOOK_CODE= "select * from prestamos where codLibros = ?";
+
+    //todo definir el tipo de consultas que necesitamos para los prestamos
+
+    //UPDATE
+    //CREATE
+    //DELETE
+
+    //USER QUERYS
+    public final static String FIND_BY_USER_NAME = "select * from usuarios where usuario=?";
+
+    //TODO crear el resto del crud para los usuarios
+    //UPDATE
+    //CREATE
+    //DELETE
 }
+

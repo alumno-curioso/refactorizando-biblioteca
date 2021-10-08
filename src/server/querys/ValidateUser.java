@@ -12,7 +12,8 @@ public class ValidateUser {
     private static PreparedStatement statement;
     private static ResultSet rs;
 
-    public static boolean validateUser(String user, String password) throws SQLException {
+    public static boolean isValidUser(String user, String password) throws SQLException {
+
 
             statement = queryExecutor(CHECK_USER);
             statement.setString(1,user);

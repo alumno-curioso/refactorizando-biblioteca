@@ -8,13 +8,13 @@ public class GetColumnsNames {
     private static PreparedStatement statement;
     private static ResultSet resultSet;
 
-    public static String[] getColumnNames(String tableNameFromDB){
+    public static String[] getColumnNames(String tableNameFromDB) throws SQLException {
 
         String[] columnsNames;
         int count = 0;
 
         statement = QueryExecutor.queryExecutor(PredefinedQuerys.GET_COLUMNS);
-        try {
+
             statement.setString(1,tableNameFromDB);
             resultSet = statement.executeQuery();
             columnsNames = new String[GetColumnSize.getColumSize(tableNameFromDB)];
@@ -24,10 +24,8 @@ public class GetColumnsNames {
                 count++;
             }
             return columnsNames;
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
 
-    return null;
+
+
     }
 }

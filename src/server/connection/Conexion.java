@@ -21,7 +21,7 @@ public class Conexion {
         return conexion;
     }
 
-    public static Connection abrirConexion() throws SQLException {
+    private static Connection abrirConexion() throws SQLException {
         conexion = DriverManager.getConnection(URL_DB, USER_DB, PASSWORD_DB);
         return conexion;
     }

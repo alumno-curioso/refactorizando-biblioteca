@@ -20,7 +20,6 @@ public class LoginController {
         this.loginEvents = new LoginEvents(this.loginView);
 
         this.loginView.getBtValidate().addActionListener(this.loginEvents);
-
     }
 
 

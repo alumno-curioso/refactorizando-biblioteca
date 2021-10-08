@@ -10,7 +10,7 @@ import view.LoginView;
 
 
 
-import static server.querys.ValidateUser.validateUser;
+import static server.querys.ValidateUser.isValidUser;
 
 public class LoginEvents implements ActionListener {
     private LoginView loginView;
@@ -55,7 +55,7 @@ public class LoginEvents implements ActionListener {
         String  user        = this.loginView.getTfUser(),
                 password    = this.loginView.getTfPass();
 
-        return (validateUser(user,password));
+        return (isValidUser(user,password));
     }
 
 
