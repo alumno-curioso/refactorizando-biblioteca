@@ -24,7 +24,9 @@ public class PredefinedQuerys {
     //TODO crear el resto del crud para alumnos
     //UPDATE
     //CREATE
+    public final static String CREATE_STUDENT = "insert into alumnos(apellido2, apellido1, nombre, dni) VALUES (?,?,?,?)";
     //DELETE
+    public final static String DELETE_STUDENT = "delete from alumnos where registro=?";
 
     //LIBRARY QUERYS
     public final static String FIND_BY_BOOK_TITLE = "select * from libros where Titulo =?";
@@ -35,7 +37,9 @@ public class PredefinedQuerys {
     //TODO crear el resto dec crud para libros
     //UPDATE
     //CREATE
+    public static final String CREATE_BOOK = "insert into libros(estado,Asignatura,Editorial,Autor,Titulo) values(?,?,?,?,?)";
     //DELETE
+    public final static String DELETE_BOOK = "delete from libros where codigo=?";
 
     //LOAN QUERYS
     public final static String FIND_LOAN_BY_STUDENT_CODE= "select * from prestamos where codAlumnos = ?";
@@ -45,6 +49,7 @@ public class PredefinedQuerys {
 
     //UPDATE
     //CREATE
+    public static final String MAKE_A_LOAN= "insert into prestamos(estado,FechaPrestamo,codLibros,codAlumnos) values(?,now(),?,?)";
     //DELETE
 
     //USER QUERYS
@@ -53,6 +58,8 @@ public class PredefinedQuerys {
     //TODO crear el resto del crud para los usuarios
     //UPDATE
     //CREATE
+    public final static String CREATE_USER = "insert into usuarios(clave,usuario) values(?,?)";
     //DELETE
+    public final static String DELETE_USER = "delete from usuarios where nombre =?";
 }
 

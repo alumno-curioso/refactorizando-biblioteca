@@ -29,5 +29,11 @@ public class QueryExecutor {
         return statement;
     }
 
+    public static PreparedStatement updateExecutor(String queryToRun) throws SQLException{
+        PreparedStatement statement;
+        statement = Conexion.getCon().prepareStatement(queryToRun);
+        return statement;
+    }
+
 }
 

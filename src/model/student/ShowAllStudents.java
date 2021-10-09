@@ -21,12 +21,12 @@ import static server.querys.tools.GetRowSize.getRowSize;
 import static server.querys.tools.PredefinedQuerys.ALL_INFO_FROM_STUDENT_TABLE;
 
 public class ShowAllStudents {
-
     private static PreparedStatement statement;
     private static ResultSet resultSet;
 
-    public static void fillTable(StudentView studentView) throws SQLException {
 
+    public static void fillTable(StudentView studentView) throws SQLException {
+        String[] COLUMNS_NAMES = getColumnNames("alumnos");
         int rows    = getRowSize("alumnos"),
             columns = getColumSize("alumnos"),
             count   = 0;
@@ -42,7 +42,7 @@ public class ShowAllStudents {
         while (count<rows){
             resultSet.next();
             for (int i = 0; i < info[0].length; i++) {
-                info[count][i] = resultSet.getString(i+1);
+                info[count][i] = resultSet.getString(COLUMNS_NAMES[i]);
             }
             count++;
         }
