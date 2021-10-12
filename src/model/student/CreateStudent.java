@@ -10,12 +10,11 @@ import static server.querys.tools.QueryExecutor.updateExecutor;
 
 public class CreateStudent {
     public static void insertNewStudent(String name, String firstLastName, String secondLastName, String DNI) throws SQLException {
-        ResultSet resultSet;
         PreparedStatement statement = updateExecutor(CREATE_STUDENT);
-        statement.setString(1,DNI);
-        statement.setString(2,name);
-        statement.setString(3,firstLastName);
-        statement.setString(4,secondLastName);
+        statement.setString(1,firstLastName);
+        statement.setString(2,secondLastName);
+        statement.setString(3,name);
+        statement.setString(4,DNI);
         statement.executeUpdate();
 
 //        resultSet = statement.executeQuery();

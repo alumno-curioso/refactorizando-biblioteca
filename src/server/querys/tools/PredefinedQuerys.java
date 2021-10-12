@@ -7,7 +7,6 @@ public class PredefinedQuerys {
     public final static String GET_COLUMNS_SIZE = "select count(*) from information_schema.COLUMNS where TABLE_NAME=?";
     //todo metodo rows
     public final static String GET_ROWS_SIZE = "select count(*) from alumnos";
-    public final static String CHECK_USER ="select * from usuarios where usuario=? and clave=?";
 
     //GET_ALL_INFO
     public final static String ALL_INFO_FROM_STUDENT_TABLE = "select * from alumnos";
@@ -23,10 +22,14 @@ public class PredefinedQuerys {
     public final static String FIND_BY_STUDENT_DNI = "select * from alumnos where dni= ?";
     //TODO crear el resto del crud para alumnos
     //UPDATE
+    public final static String UPDATE_STUDENT_NAME = "update alumnos set nombre=? where dni =?";
+    public final static String UPDATE_STUDENT_FIRST_LAST_NAME = "update alumnos set apellido1=? where dni =?";
+    public final static String UPDATE_STUDENT_SECOND_LAST_NAME = "update alumnos set apellido2=? where dni =?";
+    public final static String UPDATE_STUDENT_DNI = "update alumnos set dni=? where dni =?";
     //CREATE
     public final static String CREATE_STUDENT = "insert into alumnos(apellido2, apellido1, nombre, dni) VALUES (?,?,?,?)";
     //DELETE
-    public final static String DELETE_STUDENT = "delete from alumnos where registro=?";
+    public final static String DELETE_STUDENT = "delete from alumnos where dni=?";
 
     //LIBRARY QUERYS
     public final static String FIND_BY_BOOK_TITLE = "select * from libros where Titulo =?";
@@ -54,12 +57,15 @@ public class PredefinedQuerys {
 
     //USER QUERYS
     public final static String FIND_BY_USER_NAME = "select * from usuarios where usuario=?";
+    public final static String FIND_USERS = "select usuario from usuarios";
+    public final static String CHECK_USER ="select * from usuarios where usuario=? and clave=?";
 
     //TODO crear el resto del crud para los usuarios
     //UPDATE
+    public final static String UPDATE_USER = "update usuarios set clave=? where usuario=?";
     //CREATE
     public final static String CREATE_USER = "insert into usuarios(clave,usuario) values(?,?)";
     //DELETE
-    public final static String DELETE_USER = "delete from usuarios where nombre =?";
+    public final static String DELETE_USER = "delete from usuarios where usuario =?";
 }
 
