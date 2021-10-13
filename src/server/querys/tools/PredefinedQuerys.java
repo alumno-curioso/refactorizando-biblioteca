@@ -7,6 +7,7 @@ public class PredefinedQuerys {
     public final static String GET_COLUMNS_SIZE = "select count(*) from information_schema.COLUMNS where TABLE_NAME=?";
     //todo metodo rows
     public final static String GET_ROWS_SIZE = "select count(*) from alumnos";
+    public final static String CHECK_USER ="select * from usuarios where usuario=? and clave=?";
 
     //GET_ALL_INFO
     public final static String ALL_INFO_FROM_STUDENT_TABLE = "select * from alumnos";
@@ -57,15 +58,12 @@ public class PredefinedQuerys {
 
     //USER QUERYS
     public final static String FIND_BY_USER_NAME = "select * from usuarios where usuario=?";
-    public final static String FIND_USERS = "select usuario from usuarios";
-    public final static String CHECK_USER ="select * from usuarios where usuario=? and clave=?";
 
     //TODO crear el resto del crud para los usuarios
     //UPDATE
-    public final static String UPDATE_USER = "update usuarios set clave=? where usuario=?";
     //CREATE
     public final static String CREATE_USER = "insert into usuarios(clave,usuario) values(?,?)";
     //DELETE
-    public final static String DELETE_USER = "delete from usuarios where usuario =?";
+    public final static String DELETE_USER = "delete from usuarios where nombre =?";
 }
 
