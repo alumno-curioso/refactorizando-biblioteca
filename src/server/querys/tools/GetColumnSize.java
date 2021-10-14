@@ -21,6 +21,8 @@ public class GetColumnSize {
 
         resultSet.next();
 
-        return resultSet.getInt(1);
+        int resultado =resultSet.getInt(1);
+
+        return resultado;
     }
 }

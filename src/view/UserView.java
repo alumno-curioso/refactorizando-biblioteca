@@ -19,6 +19,7 @@ public class UserView extends JFrame{
     private JButton jbDeleteUser;
     private JButton jbReadUser;
     private JButton jbReturnMainView;
+    private JTable jtUser;
 
     public UserView(){
 
@@ -60,4 +61,8 @@ public class UserView extends JFrame{
    public JButton getJbReturnMainView(){
         return this.jbReturnMainView;
    }
+
+    public JTable getJtUser() {
+        return jtUser;
+    }
 }

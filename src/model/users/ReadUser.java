@@ -18,8 +18,9 @@ public class ReadUser {
     public static DefaultTableModel showAllInfo() throws SQLException {
 
         String[][] info = new String[getRowSize("usuarios")][getColumSize("usuarios")];
-        String[] columnsName = new String[getColumSize("usuarios")];
-        columnsName = getColumnNames("usuarios");
+//        String[] columnsName = new String[getColumSize("usuarios")];
+//        columnsName = getColumnNames("usuarios");
+        String[] columnsName = {"usuarios"};
 
         int count = 0;
 
@@ -27,11 +28,15 @@ public class ReadUser {
         ResultSet resultSet = statement.executeQuery();
 
         while (resultSet.next()) {
-            for (int i = 0; i < info[0].length; i++){
-                info[count][i]= resultSet.getString(columnsName[i]);
-            }
+
+            info[count][0]= resultSet.getString("usuario");
+//            info[count][1]= resultSet.getString(1);
+
+
             count++;
         }
+        DefaultTableModel defaultTableModel = new DefaultTableModel(info,columnsName);
+
 
         return new DefaultTableModel(info,columnsName);
     }

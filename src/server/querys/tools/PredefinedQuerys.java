@@ -58,12 +58,16 @@ public class PredefinedQuerys {
 
     //USER QUERYS
     public final static String FIND_BY_USER_NAME = "select * from usuarios where usuario=?";
+    public final static String FIND_USERS = "select usuario from usuarios";
 
     //TODO crear el resto del crud para los usuarios
     //UPDATE
+    public final static String UPDATE_USER_PASSWORD = "update usuarios set clave=? where usuario=?";
+    public final static String UPDATE_USER_NAME = "update usuarios set usuario=? where usuario=?";
+
     //CREATE
     public final static String CREATE_USER = "insert into usuarios(clave,usuario) values(?,?)";
     //DELETE
-    public final static String DELETE_USER = "delete from usuarios where nombre =?";
+    public final static String DELETE_USER = "delete from usuarios where usuario =?";
 }
 
