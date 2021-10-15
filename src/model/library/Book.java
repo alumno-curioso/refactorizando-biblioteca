@@ -50,8 +50,21 @@ public class Book {
         isValidTitle();
     }
 
+    public int numOfValidBookParameters(){
+        int numOfParameters = 0;
+        if (isValidTitle()) numOfParameters++;
+        if (isValidState()) numOfParameters++;
+        if (isValidSignature()) numOfParameters++;
+        if (isvalidPublishingHouse()) numOfParameters++;
+        if (isValidAuthor()) numOfParameters++;
+        if (isValidCode()) numOfParameters++;
+
+        return (numOfParameters==0) ? 0:
+                (numOfParameters==1)? 1:2;
+    }
     private boolean isValidTitle() {
-        return !this.author.equals("");
+
+        return !this.tittle.equals("");
     }
 
     private boolean isValidState() {

@@ -33,12 +33,14 @@ public class PredefinedQuerys {
     public final static String DELETE_STUDENT = "delete from alumnos where dni=?";
 
     //LIBRARY QUERYS
+    //READ
     public final static String FIND_BY_BOOK_TITLE = "select * from libros where Titulo =?";
     public final static String FIND_BY_BOOK_PUBLISHING_HOUSE = "select * from libros where Editorial =?";
     public final static String FIND_BY_BOOK_AUTOR = "select * from libros where Autor =?";
     public final static String FIND_BY_BOOK_COURSE = "select * from libros where Asignatura =?";
 
     //TODO crear el resto dec crud para libros
+
     //UPDATE
     public final static String UPDATE_BOOK_TITLE = "update libros set titulo=? where codigo=?";
     public final static String UPDATE_BOOK_AUTHOR = "update libros set autor=? where codigo=?";

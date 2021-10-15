@@ -25,4 +25,6 @@ public class GetColumnSize {
 
         return resultado;
     }
+
+
 }

@@ -10,7 +10,9 @@ import java.sql.SQLException;
 
 import static server.querys.tools.GetColumnSize.getColumSize;
 import static server.querys.tools.GetColumnsNames.getColumnNames;
+import static server.querys.tools.GetRowByNameAndValue.getRowByNameAndValue;
 import static server.querys.tools.GetRowSize.getRowSize;
+import static server.querys.tools.GetRowSize.getRowSizeByName;
 import static server.querys.tools.PredefinedQuerys.ALL_INFO_FROM_LIBRARY_TABLE;
 import static server.querys.tools.QueryExecutor.queryExecutor;
 
@@ -25,10 +27,6 @@ public class ReadBook {
         columns = getColumnNames("libros");
         int count =0;
 
-        for (String c:columns
-             ) {
-            System.out.println("c = " + c);
-        }
         PreparedStatement statement = queryExecutor(ALL_INFO_FROM_LIBRARY_TABLE);
         ResultSet resultSet = statement.executeQuery();
 
@@ -42,6 +40,26 @@ public class ReadBook {
             count++;
         }
 
+        return new DefaultTableModel(info,columns);
+    }
+
+    public static TableModel readByAttribute(String tableName,String column, String value) throws SQLException {
+        info = new String[getRowByNameAndValue(tableName, column, value)][getColumSize(tableName)];
+        columns = getColumnNames(tableName);
+
+        int count = 0;
+
+        PreparedStatement statement = queryExecutor(ModifiableQuery.readByTableColunmAndValue(tableName, column, value));
+        ResultSet resultSet = statement.executeQuery();
+
+        while (resultSet.next()){
+            for (int i = 0; i < columns.length; i++) {
+                info[count][i] = resultSet.getString(columns[i]);
+
+            }
+
+            count++;
+        }
         return new DefaultTableModel(info,columns);
     }
 }

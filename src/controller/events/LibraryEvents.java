@@ -14,9 +14,14 @@ import javax.swing.*;
 import static model.library.CreateBook.createBook;
 import static model.library.DeleteBook.deleteBook;
 import static model.library.ReadBook.readAllBooks;
+import static server.querys.tools.PredefinedQuerys.*;
 
 
 public class LibraryEvents implements ActionListener {
+
+    private static final int    NO_OPTIONS=0,
+                                ONE_OPTION=1;
+
     private LibraryView libraryView;
 
     public LibraryEvents(LibraryView libraryView){
@@ -32,7 +37,7 @@ public class LibraryEvents implements ActionListener {
                 signature = this.libraryView.getJtBookCourse(),
                 publishingHouse = this.libraryView.getJtBookEdit(),
                 author= this.libraryView.getJtBookAutor(),
-                title =this.libraryView.getTitle();
+                title =this.libraryView.getJtBookTitle();
         int     code = this.libraryView.getJtBookCode();
 
         Book newBook = new Book(state,signature,publishingHouse,author,title,code);
@@ -44,15 +49,32 @@ public class LibraryEvents implements ActionListener {
                 if (newBook.isValidBook()) create(newBook);
             }
             if (selectedAction.equals("CONSULTAR")) {
-                read();
+                if (newBook.numOfValidBookParameters() == 0) read();
+                if(newBook.numOfValidBookParameters()==1) {
+
+                    if(!newBook.getAuthor().equals("")) read(newBook.getAuthor(), "Autor");
+                    if(!newBook.getSignature().equals("")) read(newBook.getSignature(), "Asignatura");
+                    if(!newBook.getState().equals("")) read(newBook.getState(), "estado");
+                    if(!newBook.getPublishingHouse().equals("")) read(newBook.getPublishingHouse(), "Editorial");
+                    if(!newBook.getTittle().equals("")) read(newBook.getTittle(), "Titulo");
+
+                }else{
+                    JOptionPane.showMessageDialog(null
+                            ,"la busqueda por mas de un parametro no esta establecida"
+                            ,"READ BOOK"
+                            ,JOptionPane.INFORMATION_MESSAGE);
+                }
+
             }
             if (selectedAction.equals("MODIFICAR")) {
 
-                if(!state.equals("")) update(state,code, PredefinedQuerys.UPDATE_BOOK_STATE);
-                if(!signature.equals("")) update(signature,code, PredefinedQuerys.UPDATE_BOOK_ASIGNATURA);
-                if(!publishingHouse.equals("")) update(publishingHouse,code, PredefinedQuerys.UPDATE_BOOK_PUBLISHING_HOUSE);
-                if(!author.equals("")) update(author,code, PredefinedQuerys.UPDATE_BOOK_AUTHOR);
-                if(!title.equals("")) update(title,code, PredefinedQuerys.UPDATE_BOOK_TITLE);
+                if(!state.equals("")) update(state,code, UPDATE_BOOK_STATE);
+                if(!signature.equals("")){
+                    update(signature,code, UPDATE_BOOK_ASIGNATURA);
+                }
+                if(!publishingHouse.equals("")) update(publishingHouse,code, UPDATE_BOOK_PUBLISHING_HOUSE);
+                if(!author.equals("")) update(author,code, UPDATE_BOOK_AUTHOR);
+                if(!title.equals("")) update(title,code, UPDATE_BOOK_TITLE);
 
             }
             if (selectedAction.equals("BORRAR")) {
@@ -64,7 +86,7 @@ public class LibraryEvents implements ActionListener {
             }
 
         }catch (SQLException exception){
-
+            exception.printStackTrace();
         }
         if(selectedAction.equals("VOLVER")){
             System.out.println("ok");
@@ -76,12 +98,19 @@ public class LibraryEvents implements ActionListener {
     }
 
     //todo hacer los metodos privados para usar en el action performed
+
     private void create(Book book) throws SQLException {
         createBook(book);
     }
+
     private void read() throws SQLException {
         this.libraryView.getJtLibrary().setModel(readAllBooks());
     }
+
+    private void read(String value, String column) throws SQLException {
+        this.libraryView.getJtLibrary().setModel(ReadBook.readByAttribute("libros",column,value));
+    }
+
     private void update(String value,int code ,String queryToRun) throws SQLException {
         try {
             int numericValue = Integer.parseInt(value);

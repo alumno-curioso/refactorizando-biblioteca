@@ -23,4 +23,15 @@ public class GetRowSize {
         return  resultSet.getInt(1);
 
     }
+
+    public static int getRowSizeByName(String tableNameFromDB, String Value) throws SQLException {
+        statement = queryExecutor("select count(?) from "+tableNameFromDB);
+
+        resultSet = statement.executeQuery();
+
+        resultSet.next();
+
+        return  resultSet.getInt(1);
+
+    }
 }
