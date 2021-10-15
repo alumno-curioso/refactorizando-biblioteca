@@ -40,8 +40,13 @@ public class PredefinedQuerys {
 
     //TODO crear el resto dec crud para libros
     //UPDATE
+    public final static String UPDATE_BOOK_TITLE = "update libros set titulo=? where codigo=?";
+    public final static String UPDATE_BOOK_AUTHOR = "update libros set autor=? where codigo=?";
+    public final static String UPDATE_BOOK_PUBLISHING_HOUSE = "update libros set editorial=? where codigo=?";
+    public final static String UPDATE_BOOK_ASIGNATURA = "update libros set asignatura=? where codigo=?";
+    public final static String UPDATE_BOOK_STATE = "update libros set estado=? where codigo=?";
     //CREATE
-    public static final String CREATE_BOOK = "insert into libros(estado,Asignatura,Editorial,Autor,Titulo) values(?,?,?,?,?)";
+    public static final String CREATE_BOOK = "insert into libros(estado,Asignatura,Editorial,Autor,Titulo,codigo) values(?,?,?,?,?,?)";
     //DELETE
     public final static String DELETE_BOOK = "delete from libros where codigo=?";
 

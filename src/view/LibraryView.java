@@ -19,6 +19,7 @@ public class LibraryView extends JFrame {
     private JTextField jtBookEdit;
     private JTextField jtBookCourse;
     private JTextField jtBookState;
+    private JTextField jtBookCode;
 
     private JButton jcCreateBook;
     private JButton jbUpdateBook;
@@ -60,6 +61,8 @@ public class LibraryView extends JFrame {
         return jtBookState.getText();
     }
 
+    public int getJtBookCode(){ return Integer.parseInt(jtBookCode.getText()); }
+
     public JButton getJcCreateBook() {
         return jcCreateBook;
     }
@@ -78,5 +81,9 @@ public class LibraryView extends JFrame {
 
     public JButton getJbReturn() {
         return jbReturn;
+    }
+
+    public JTable getJtLibrary() {
+        return jtLibrary;
     }
 }
