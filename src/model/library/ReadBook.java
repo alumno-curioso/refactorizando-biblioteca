@@ -62,4 +62,24 @@ public class ReadBook {
         }
         return new DefaultTableModel(info,columns);
     }
+
+    public static TableModel readByAttribute(String tableName,String column, int value) throws SQLException {
+        info = new String[getRowByNameAndValue(tableName, column, value)][getColumSize(tableName)];
+        columns = getColumnNames(tableName);
+
+        int count = 0;
+
+        PreparedStatement statement = queryExecutor(ModifiableQuery.readByTableColunmAndValue(tableName, column, value));
+        ResultSet resultSet = statement.executeQuery();
+
+        while (resultSet.next()){
+            for (int i = 0; i < columns.length; i++) {
+                info[count][i] = resultSet.getString(columns[i]);
+
+            }
+
+            count++;
+        }
+        return new DefaultTableModel(info,columns);
+    }
 }

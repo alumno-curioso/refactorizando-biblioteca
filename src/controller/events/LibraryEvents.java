@@ -57,6 +57,7 @@ public class LibraryEvents implements ActionListener {
                     if(!newBook.getState().equals("")) read(newBook.getState(), "estado");
                     if(!newBook.getPublishingHouse().equals("")) read(newBook.getPublishingHouse(), "Editorial");
                     if(!newBook.getTittle().equals("")) read(newBook.getTittle(), "Titulo");
+                    if(newBook.getCode()>0) read(newBook.getCode(), "codigo");
 
                 }else{
                     JOptionPane.showMessageDialog(null
@@ -109,6 +110,10 @@ public class LibraryEvents implements ActionListener {
 
     private void read(String value, String column) throws SQLException {
         this.libraryView.getJtLibrary().setModel(ReadBook.readByAttribute("libros",column,value));
+    }
+
+    private void read(int value,String column) throws SQLException {
+        this.libraryView.getJtLibrary().setModel((ReadBook.readByAttribute("libros",column,value)));
     }
 
     private void update(String value,int code ,String queryToRun) throws SQLException {

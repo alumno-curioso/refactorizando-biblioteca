@@ -15,4 +15,15 @@ public class GetRowByNameAndValue {
 
         return Integer.parseInt(resultSet.getString(1));
     }
+
+    public static int getRowByNameAndValue(String tableName, String column, int value) throws SQLException {
+        String query = "select count(*) from "+tableName+" where "+column+" like ?";
+        PreparedStatement statement = QueryExecutor.queryExecutor(query);
+        statement.setInt(1,value);
+
+        ResultSet resultSet = statement.executeQuery();
+        resultSet.next();
+
+        return Integer.parseInt(resultSet.getString(1));
+    }
 }
