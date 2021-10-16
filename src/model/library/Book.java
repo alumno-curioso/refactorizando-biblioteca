@@ -1,5 +1,15 @@
 package model.library;
 
+import server.querys.tools.PredefinedQuerys;
+import server.querys.tools.QueryExecutor;
+
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import static server.querys.tools.PredefinedQuerys.GET_BOOK_ID;
+import static server.querys.tools.QueryExecutor.queryExecutor;
+
 public class Book {
     private String  state,
                     signature,
@@ -85,6 +95,14 @@ public class Book {
 
     private boolean isValidCode() {
         return this.code>0;
+    }
+
+    public static boolean isValidCode(String code) throws SQLException {
+        PreparedStatement statement = queryExecutor(GET_BOOK_ID);
+        statement.setInt(1,Integer.parseInt(code));
+        ResultSet resultSet= statement.executeQuery();
+        if(resultSet.next()) return true;
+        return false;
     }
 
 

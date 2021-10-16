@@ -21,6 +21,8 @@ public class PredefinedQuerys {
     public final static String FIND_BY_STUDENT_FIRST_LAST_NAME = "select * from alumnos where apellido1= ?";
     public final static String FIND_BY_STUDENT_SECOND_LAST_NAME = "select * from alumnos where apellido2= ?";
     public final static String FIND_BY_STUDENT_DNI = "select * from alumnos where dni= ?";
+
+    public final static String GET_STUDENT_CODE = "select registro from alumnos where dni =?";
     //TODO crear el resto del crud para alumnos
     //UPDATE
     public final static String UPDATE_STUDENT_NAME = "update alumnos set nombre=? where dni =?";
@@ -38,6 +40,8 @@ public class PredefinedQuerys {
     public final static String FIND_BY_BOOK_PUBLISHING_HOUSE = "select * from libros where Editorial =?";
     public final static String FIND_BY_BOOK_AUTOR = "select * from libros where Autor =?";
     public final static String FIND_BY_BOOK_COURSE = "select * from libros where Asignatura =?";
+
+    public final static String GET_BOOK_ID ="select codigo from libros where codigo=?";
 
     //TODO crear el resto dec crud para libros
 
